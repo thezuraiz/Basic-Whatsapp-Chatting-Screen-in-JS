@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chating Screen</title>
+    <script src="https://kit.fontawesome.com/c2b7ad48ec.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            background-color: red;
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .screen1,
+        .screen2 {
+            width: 49.7vw;
+        }
+
+        .header {
+            background-color: #25D366;
+            height: 65px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        img {
+            height: 50px;
+            border-radius: 50px;
+        }
+
+        .headleft {
+            display: flex;
+            align-items: center;
+            margin: 0 15px;
+        }
+
+        .headright {
+            display: flex;
+            align-items: center;
+            margin: 0 15px;
+        }
+
+        /* body */
+        .screen {
+            height: 85.1vh;
+            background-color: rgb(9, 9, 73);
+            background-image: url(/wall.jpg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* footer */
+        .foot {
+            background-color: #25D366;
+            height: 59px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footleft {
+            display: flex;
+            margin-left: 10px;
+        }
+
+        .footleft i {
+            margin: 0 10px;
+        }
+
+        /* random */
+        i {
+            color: #fffdfa;
+            margin: 0 20px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .more {
+            color: #fffdfa;
+            font-weight: bolder;
+            rotate: 90deg;
+        }
+
+        h3 {
+            color: #fffdfa;
+            padding: 0 10px;
+            /* font-style: normal; */
+            font-weight: bold;
+        }
+
+        input {
+            width: 32vw;
+            height: 45px;
+            border-radius: 50px;
+            border-color: #000000;
+            padding: 0 20px;
+            background-color: #25D366;
+            color: #fffdfa;
+            outline: none;
+        }
+
+        input::hower {
+            border: none;
+            border-style: none;
+            border-color: none;
+        }
+
+        .circle {
+            height: 40px;
+            width: 40px;
+            border-radius: 50px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 15px;
+        }
+
+        .circle i {
+            color: #25D366;
+        }
+
+        .screen {
+            display: flex;
+            align-items: flex-end;
+            justify-content: right;
+            justify-content: space-between;
+        }
+
+        .screen h3 {
+            margin: 10px 20px;
+        }
+
+        h3{
+            display: block;
+        }
+        .green
+        {
+            background-color: #25D366;
+            padding: 5px 20px;
+            border-radius: 15px 2px;
+        }
+        .grey
+        {
+            padding: 5px 20px;
+            background-color: grey;
+            border-radius: 2px 15px;
+        }
+       
+    </style>
+
+    <script>
+        var lmsg;
+
+        function sendright()
+        {
+            var lmsg = document.getElementById('lmsg').value;
+            document.getElementById("llmsgplacer").innerHTML += "<h3 class='green'>" + lmsg + "</h3>";
+            document.getElementById("lrmsgplacer").innerHTML += "<h3 class='grey'>" + lmsg + "</h3>";
+            var lmsg = document.getElementById('lmsg').value = "";
+                var audio = new Audio('music.mp4');
+                audio.play();
+                
+            }
+            function sendleft()
+            {
+                var rmsg = document.getElementById('rmsg').value;
+                document.getElementById("rrmsgplacer").innerHTML += "<h3 class='green'>"+ rmsg +"</h3>";
+                document.getElementById("rlmsgplacer").innerHTML += "<h3 class='grey'>"+ rmsg +"</h3>";
+                var rmsg = document.getElementById('rmsg').value = "";
+                var audio = new Audio('music.mp4');
+                audio.play();
+                
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        
+        <div class="screen1">
+            <div class="header">
+                <div class="headleft">
+                    <div class="img">
+                        <img src="./thezuraiz.png" alt="">
+                    </div>
+                    <div class="headname">
+                        <h3>Zuraiz Khan</h3>
+                    </div>
+                </div>
+                <div class="headright">
+                    <i class="fa-solid fa-video"></i>
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="more">...</div>
+                </div>
+            </div>
+            <div class="screen">
+            
+                <div id="rlmsgplacer"></div>
+                <div id="llmsgplacer"></div>
+            </div>
+            <div class="footer">
+                <div class="foot">
+                    <div class="footleft">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                    </div>
+                    <div class="footcenter">
+                        <input type="text" id="lmsg" placeholder="Type a message" id="">
+                    </div>
+                    <div class="footright">
+                        <div class="circle">
+                            <i onclick="sendright()" class="fa-solid fa-location-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="screen2">
+            <div class="header">
+                <div class="headleft">
+                    <div class="img">
+                        <img src="./thezuraiz.png" alt="">
+                    </div>
+                    <div class="headname">
+                        <h3>Zuraiz Khan 2</h3>
+                    </div>
+                </div>
+                <div class="headright">
+                    <i class="fa-solid fa-video"></i>
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="more">...</div>
+                </div>
+            </div>
+            <div class="screen">
+                <div id="lrmsgplacer"></div>
+                <div id="rrmsgplacer"></div>
+            </div>
+            <div class="footer">
+                <div class="foot">
+                    <div class="footleft">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                    </div>
+                    <div class="footcenter">
+                        <input type="text" placeholder="Type a message" id="rmsg">
+                    </div>
+                    <div class="footright">
+                        <div class="circle">
+                            <i onclick="sendleft()" class="fa-solid fa-location-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
